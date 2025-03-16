@@ -1,5 +1,6 @@
 "use client"
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 
 export default function navbar() {
@@ -8,10 +9,10 @@ let [margin,setMarging]= useState("left-[600px]")
 let [mobile,setMobile]=useState(false)
 
 let navlists=[
-  {id:1,title:"weblog",link:"ssss"},
-  {id:2,title:"about",link:"ssss"},
-  {id:3,title:"products",link:"ssss"},
-  {id:4,title:"team",link:"ssss"},
+  {id:1,title:"home",link:"/"},
+  {id:2,title:"about",link:"/about"},
+  {id:3,title:"products",link:"#"},
+  {id:4,title:"team",link:"#"},
 
 ]
 
@@ -31,7 +32,7 @@ let navlists=[
     <>
     <div className="relative overflow-hidden flex flex-row justify-around content-center items-center  w-[100%] h-[60px] bg-red-800 text-[25px]  text-white">
       
-      <div className=""> SmartEngs </div>
+      <div className=""><Link className=" cursor-pointer " href="/"> SmartEngs </Link> </div>
 
       <div> logo </div>
 
@@ -39,7 +40,7 @@ let navlists=[
       <div className="hidden   md:flex  md:flex-row md:justify-center mdLitems-stretch md:gap-10  "> 
        
    
-        {navlists.map((list,index)=>(<div key={index}>{list.title}</div>))}
+        {navlists.map((list,index)=>(<div key={index}><Link href={list.link}>{list.title}</Link></div>))}
         
         </div>
 
@@ -61,7 +62,7 @@ let navlists=[
 {/* movile navbar */}
 <div className={`md:hidden fixed top-[60px] bottom-0 ${margin} flex flex-col  items-center gap-8 p-10 float-right w-[100%] text-center  text-white text-[25px] bg-red-800 my-1  transition-all duration-400 `}> 
        
-       {navlists.map((list,index)=>(<div key={index}>{list.title}</div>))}
+       {navlists.map((list,index)=>(<div key={index}><Link href={list.link}>{list.title}</Link></div>))}
          
          </div>
 
