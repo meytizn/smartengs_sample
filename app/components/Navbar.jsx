@@ -12,7 +12,7 @@ let navlists=[
   {id:1,title:"home",link:"/"},
   {id:2,title:"about",link:"/about"},
   {id:3,title:"products",link:"/products"},
-  {id:4,title:"team",link:"#"},
+  {id:4,title:"cart",link:"/cart"},
 
 ]
 
