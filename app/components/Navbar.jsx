@@ -32,7 +32,7 @@ let navlists=[
     <>
     <div className="relative overflow-hidden flex flex-row justify-around content-center items-center  w-[100%] h-[60px] bg-red-800 text-[25px]  text-white">
       
-      <div className=""><Link className=" cursor-pointer " href="/"> SmartEngs </Link> </div>
+      <div className=""><Link className=" cursor-pointer " href="/"> SmEngs </Link> </div>
 
       <div> logo </div>
 

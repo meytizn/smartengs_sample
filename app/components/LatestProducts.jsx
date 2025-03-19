@@ -6,14 +6,21 @@ import Link from 'next/link';
 
 
 
-export default function LatestProducts() {
-  let products=[
-    {id:1,title:"tv",price:3000,image: "/images/tv.jpg", description:"samsung tv is the best"},
-    {id:2,title:"xbox",price:8000,image: "/images/tv.jpg", description:"xbox is the best"},
-    {id:3,title:"Iphone16",price:12000,image:"/images/tv.jpg" , description:"Iphone16 is the best"},
-    {id:4,title:"Laptop",price:9000,image:"/images/tv.jpg" , description:"Laptop is the best"},
+export default async function LatestProducts() {
+
+//using dynamic apis in api/products/route.js
+  let response= await fetch("http://192.168.1.6:3000/api/products")
+  let products= await response.json()
+
+
+  // static api commited 
+  // let products=[
+  //   {id:1,title:"tv",price:3000,image: "/images/tv.jpg", description:"samsung tv is the best"},
+  //   {id:2,title:"xbox",price:8000,image: "/images/tv.jpg", description:"xbox is the best"},
+  //   {id:3,title:"Iphone16",price:12000,image:"/images/tv.jpg" , description:"Iphone16 is the best"},
+  //   {id:4,title:"Laptop",price:9000,image:"/images/tv.jpg" , description:"Laptop is the best"},
     
-  ]
+  // ]
 
   
   return (
